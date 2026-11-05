@@ -180,6 +180,6 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(`main` - `feature`)
 ===============================
 메뉴 선택 (1-5): 5
 게임을 종료합니다.
-<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/ff7c5d99-66f1-4ba0-82e1-7cf1bd80fb94" />
-<img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/d9021293-8e3c-4a5f-b2b6-f0788a3c9f81" />
+<img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/6921bd89-85cf-44fe-85d0-3086585c4eff" />
+<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/f5471246-b071-482b-9e57-cf42663ceb89" />
 

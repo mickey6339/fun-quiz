@@ -123,6 +123,9 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(`main` - `feature`)
 ## 📷 9. 실행 및 실습 검증 증빙 (Execution Logs)
 
 ### 1) 프로그램 실행 및 입력 예외 처리 로그 (평가 항목 #1, #2 증빙)
+<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/1930ae9c-5168-42c8-8f93-17ce88d02a8d" />
+<img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/191ecd78-bc08-4b55-b566-b8aaf60ba421" />
+
 ```text
 ===============================
   신조어 & 줄임말 퀴즈 게임
@@ -181,6 +184,4 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(`main` - `feature`)
 메뉴 선택 (1-5): 5
 게임을 종료합니다.
 
-<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/1930ae9c-5168-42c8-8f93-17ce88d02a8d" />
-<img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/191ecd78-bc08-4b55-b566-b8aaf60ba421" />
 

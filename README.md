@@ -59,6 +59,8 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(`main` - `feature`)
 
 1. **자동 백업 메커니즘 (`state.json.bak`):**
    * 새로운 상태 저장(`save_state`) 시 기존 정상 파일을 백업 파일(`state.json.bak`)로 자동 복제 후 덮어쓰기를 수행합니다.
+   * <img width="476" height="260" alt="자동파일백업" src="https://github.com/user-attachments/assets/951aeb96-a525-422a-b056-29496d0c3516" />
+
 2. **손상 시 2단계 복원 워크플로우:**
    * `state.json` 파일 읽기 오류(`JSONDecodeError`, `KeyError` 등) 감지 시 안내 메시지를 출력합니다.
    * 백업본(`state.json.bak`)이 존재하면 즉시 복원하여 이전 데이터를 보존합니다.
@@ -114,6 +116,7 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(`main` - `feature`)
 | **9** | `git commit -m "docs: 클래스 채택 논리 및 JSON 한계 분석 추가"` | 아키텍처 문서 고도화 |
 | **10** | `git commit -m "test: clone 및 pull 워크플로우 검증"` | 복제 및 동기화 사이클 검증 |
 | **11** | `git commit -m "docs: 실행 로그 및 최종 제출본 완성"` | 커밋 10회 이상 완결 |
+<img width="523" height="280" alt="커밋10개" src="https://github.com/user-attachments/assets/6fc6d2cc-3229-4bd2-8977-5e4d5dc0a6b0" />
 
 ---
 
@@ -177,3 +180,6 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(`main` - `feature`)
 ===============================
 메뉴 선택 (1-5): 5
 게임을 종료합니다.
+<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/ff7c5d99-66f1-4ba0-82e1-7cf1bd80fb94" />
+<img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/d9021293-8e3c-4a5f-b2b6-f0788a3c9f81" />
+

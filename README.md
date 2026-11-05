@@ -1,3 +1,4 @@
+<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/5c49fb9b-d939-4dca-83b6-68888fc9b878" />
 # 🎯 신조어 & 줄임말 퀴즈 게임 (fun-quiz)
 
 > **Python 3.12 기반 콘솔 인터랙티브 퀴즈 프로그램 & Git 브랜칭 워크플로우 실습 프로젝트**
@@ -24,6 +25,7 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(main - feature), 10
 | **VCS** | Git | 로컬 버전 관리, 10회 이상 커밋, 브랜칭 및 원격 동기화 |
 | **Repository** | GitHub (mickey6339/fun-quiz) | 원격 코드 호스팅 및 협업 환경 검증 |
 | **Environment** | Windows 11, VS Code, PowerShell | CLI 빌드, 디버깅, 셸 환경 테스트 |
+<img width="523" height="280" alt="커밋10개" src="https://github.com/user-attachments/assets/fe6c1eec-b43d-42f9-9949-35ec762191fd" />
 
 ---
 
@@ -58,6 +60,8 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(main - feature), 10
 
 1. **자동 백업 메커니즘 (state.json.bak):**
    * 새로운 상태 저장(save_state) 시 기존 정상 파일을 백업 파일(state.json.bak)로 자동 복제 후 덮어쓰기 수행.
+   * <img width="476" height="260" alt="자동파일백업" src="https://github.com/user-attachments/assets/94693d25-053a-4b51-9e35-aaa20869e135" />
+
 2. **손상 시 2단계 복원 워크플로우:**
    * state.json 파일 읽기 오류(JSONDecodeError 등) 감지 시 안내 메시지 출력.
    * 백업본(state.json.bak)이 존재하면 즉시 복원하여 이전 데이터 보존.
@@ -86,5 +90,7 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(main - feature), 10
 ---
 
 ## 📷 7. 실행 및 실습 검증 증빙 (Execution Logs)
+<img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/131215d4-434b-4123-b688-6eb5d106caa8" />
+<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/44b43607-a1be-41da-8b8f-3cb8f22e317b" />
 
 ### 1) 프로그램 실행 및 입력 예외 처리 로그 (평가 항목 #1, #2 증빙)

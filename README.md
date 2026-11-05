@@ -90,10 +90,9 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(main - feature), 10
 ---
 
 ## 📷 7. 실행 및 실습 검증 증빙 (Execution Logs)
+### 1) 프로그램 실행 및 입력 예외 처리 로그 (평가 항목 #1, #2 증빙)
 <img width="511" height="806" alt="menu_list_score_exit" src="https://github.com/user-attachments/assets/131215d4-434b-4123-b688-6eb5d106caa8" />
 <img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/44b43607-a1be-41da-8b8f-3cb8f22e317b" />
-
-### 1) 프로그램 실행 및 입력 예외 처리 로그 (평가 항목 #1, #2 증빙)
 
 ---
 

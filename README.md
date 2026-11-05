@@ -94,3 +94,48 @@ Git 필수 7대 명령어 실습, 기능별 브랜칭 전략(main - feature), 10
 <img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/44b43607-a1be-41da-8b8f-3cb8f22e317b" />
 
 ### 1) 프로그램 실행 및 입력 예외 처리 로그 (평가 항목 #1, #2 증빙)
+
+---
+
+## 🚀 8. 실행 가이드 (Quick Start)
+
+### 1) 프로그램 실행 방법
+터미널 환경에 맞춰 아래 명령어 중 하나를 실행합니다:
+
+```powershell
+# 기본 실행 명령어
+python main.py
+
+# 환경 변수 미등록 PC 실행 명령어
+& "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe" main.py
+
+---
+
+## 📋 9. state.json 스키마 설계 및 중첩 구조 채택 사유 (평가 항목 #17 보완)
+
+### 1) 필드별 역할 및 정의
+| 필드명 | 데이터 타입 | 설명 및 역할 |
+| :--- | :---: | :--- |
+| `quizzes` | `List[Dict]` | 전체 퀴즈 목록을 순서대로 관리하는 최상위 배열 컨테이너 |
+| `quizzes[].question` | `String` | 사용자에게 화면으로 출력할 퀴즈 문항 텍스트 |
+| `quizzes[].choices` | `List[String]` | 4지선다 객관식 선택지 보기 목록 (1번~4번 매핑) |
+| `quizzes[].answer` | `Integer` | 실제 정답 번호 (1~4 범위의 정수값, 인덱스 판정 기준) |
+| `high_score` | `Integer` | 플레이어가 달성한 역대 최고 점수 기록 보존 |
+
+### 2) 계층형 중첩 구조(Nested Structure) 채택 사유
+1. **문제 단위의 원자성(Atomicity) 확보:** 하나의 퀴즈를 구성하는 '질문-보기 목록-정답'을 단일 객체(`Dict`)로 묶어 관리함으로써, 배열 정렬이나 신규 문제 추가/삭제 시 데이터 간의 참조 불일치를 원천 차단합니다.
+2. **객체-도메인 매핑 일치:** `Quiz` 클래스의 속성(`question`, `options`, `answer`)과 1:1로 정확히 직렬화(to_dict) 및 역직렬화(from_dict)가 이루어지도록 설계하여 파싱 로직의 복잡도를 낮췄습니다.
+3. **메타데이터 분리 독립성:** 퀴즈 목록(`quizzes`)과 전역 상태 데이터(`high_score`)를 동격의 루트 키로 분리 배치하여, 향후 '플레이어 프로필', '누적 플레이 횟수' 등 추가 메타데이터가 늘어나도 기존 퀴즈 구조를 변경하지 않고 유연하게 확장 가능합니다.
+
+---
+
+## 🔍 10. 요구사항 변경 시 영향도 분석 (Change Impact Analysis) (평가 항목 #20 보완)
+
+프로그램의 기능 추가 및 요구사항 수정 시, 영향받는 파일과 관련 메서드의 의존성 매핑 목록입니다.
+
+| 변경 요구사항 시나리오 | 수정 대상 파일 | 영향받는 클래스 및 메서드 | 구체적 영향도 및 수정 내용 |
+| :--- | :--- | :--- | :--- |
+| **선택지 문항 수 변경 (예: 4지선다 ➔ 5지선다 또는 O/X)** | `main.py` | `Quiz.__init__`, `Quiz.check_answer`<br>`QuizGame.add_quiz`, `QuizGame.play` | • 입력값 유효 범위 검증 조건 수정 (`1~4` ➔ `1~5` 또는 `1~2`)<br>• 선택지 출력 반복문 및 안내 문구 템플릿 변경 |
+| **저장 스키마 확장 (예: 퀴즈별 해설, 난이도 필드 추가)** | `main.py`<br>`state.json` | `Quiz.__init__`, `Quiz.to_dict`<br>`QuizGame.load_state`, `QuizGame.add_quiz` | • `Quiz` 클래스 생성자 및 딕셔너리 직렬화/역직렬화 필드 추가<br>• 퀴즈 등록 메서드(`add_quiz`)에 난이도/해설 입력 프롬프트 반영 |
+| **점수 시스템 개편 (예: 문항별 배점 차등화, 감점제 도입)** | `main.py` | `Quiz.__init__`, `Quiz.to_dict`<br>`QuizGame.play`, `QuizGame.save_state` | • `Quiz` 모델에 배점(`points`) 속성 추가<br>• `play()` 루프 내 점수 누적 연산식 및 최고 점수(`high_score`) 갱신 로직 수정 |
+| **데이터 저장소 전환 (JSON ➔ SQLite / DB 도입)** | `main.py`<br>`(신규 DB 파일)` | `QuizGame.load_state`, `QuizGame.save_state`<br>`QuizGame.__init__` | • JSON 파일 I/O 로직을 SQL 쿼리(INSERT, SELECT)로 전면 교체<br>• 백업 복구 메커니즘을 DB 트랜잭션(Commit/Rollback) 방식으로 전환 |

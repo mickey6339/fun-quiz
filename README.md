@@ -1,4 +1,4 @@
-<img width="574" height="697" alt="score" src="https://github.com/user-attachments/assets/5c49fb9b-d939-4dca-83b6-68888fc9b878" />
+
 # 🎯 신조어 & 줄임말 퀴즈 게임 (fun-quiz)
 
 > **Python 3.12 기반 콘솔 인터랙티브 퀴즈 프로그램 & Git 브랜칭 워크플로우 실습 프로젝트**
